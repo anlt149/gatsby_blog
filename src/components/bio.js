@@ -38,12 +38,8 @@ function Bio() {
               }}
             />
             <p>
-              My name is <strong>{author}</strong>, Senior in University of Information Technology
-              {/* Francisco building useful things. */}
-              {` `}
-              {/* <a href={`https://twitter.com/${social.twitter}`}>
-                You should follow him on Twitter
-              </a> */}
+              My name is <strong> An </strong>, Senior in University of Information Technology
+             
             </p>
           </div>
         )
