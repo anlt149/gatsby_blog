@@ -9,6 +9,14 @@ module.exports = {
     },
   },
   plugins: [
+    // {
+    //   resolve: `gatsby-source-filesystem`,
+    //   options: {
+    //     name: `markdown-pages`,
+    //     path: `${__dirname}/src/markdown-pages`,
+    //   },
+    // },
+    `gatsby-transformer-remark`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -97,6 +105,7 @@ module.exports = {
               }
             }
           `,
+          
           output: "/rss.xml",
           title: "Your Site's RSS Feed",
           // optional configuration to insert feed reference in pages:
