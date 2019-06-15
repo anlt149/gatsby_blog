@@ -9,7 +9,6 @@ import { rhythm, scale } from "../utils/typography"
 class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.markdownRemark
-    // const tag = this.props.data.site.siteMetadata.tags
     const siteTitle = this.props.data.site.siteMetadata.title
     const { previous, next } = this.props.pageContext
 
@@ -38,13 +37,13 @@ class BlogPostTemplate extends React.Component {
         />
         <div>
           <ul>
-            {post.frontmatter.tags.map((val) => {
+            {/* {post.frontmatter.tags.map((val) => {
               return <li key={val}> 
                 <Link to ="/tags/"> 
                 {val}
                 </Link>
                 </li>
-            })}
+            })} */}
           </ul>
         </div>
         {/* <Bio /> */}
