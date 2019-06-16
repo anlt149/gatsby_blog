@@ -6,6 +6,8 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm, scale } from "../utils/typography"
 
+// import {TagsList} from '../components/TagsList'
+
 class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.markdownRemark
@@ -19,6 +21,27 @@ class BlogPostTemplate extends React.Component {
           description={post.frontmatter.description || post.excerpt}
         />
         <h1>{post.frontmatter.title}</h1>
+        <p> <strong>Tags:{'  '}{post.frontmatter.tags.map((tag, index) => {
+  return (
+    <span 
+       style = {{
+         margin: '0px 12px 0px 0px',
+         padding: '4px',
+         border: '1px solid rebeccapurple'
+       }}
+       key={index} className="tag">
+         <Link 
+           to={`/tags/${tag}`}
+           style = {{
+             color: 'rebeccapurple',
+             textDecoration: 'none'
+           }}
+           >{tag}</Link>{' '}        
+    </span>
+  )
+})}
+</strong>
+</p>
         <p
           style={{
             ...scale(-1 / 5),
@@ -35,17 +58,7 @@ class BlogPostTemplate extends React.Component {
             marginBottom: rhythm(1),
           }}
         />
-        <div>
-          <ul>
-            {/* {post.frontmatter.tags.map((val) => {
-              return <li key={val}> 
-                <Link to ="/tags/"> 
-                {val}
-                </Link>
-                </li>
-            })} */}
-          </ul>
-        </div>
+        
         {/* <Bio /> */}
 
         <ul
