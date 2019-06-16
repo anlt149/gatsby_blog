@@ -21,27 +21,7 @@ class BlogPostTemplate extends React.Component {
           description={post.frontmatter.description || post.excerpt}
         />
         <h1>{post.frontmatter.title}</h1>
-        <p> <strong>Tags:{'  '}{post.frontmatter.tags.map((tag, index) => {
-  return (
-    <span 
-       style = {{
-         margin: '0px 12px 0px 0px',
-         padding: '4px',
-         border: '1px solid rebeccapurple'
-       }}
-       key={index} className="tag">
-         <Link 
-           to={`/tags/${tag}`}
-           style = {{
-             color: 'rebeccapurple',
-             textDecoration: 'none'
-           }}
-           >{tag}</Link>{' '}        
-    </span>
-  )
-})}
-</strong>
-</p>
+        
         <p
           style={{
             ...scale(-1 / 5),
@@ -58,6 +38,27 @@ class BlogPostTemplate extends React.Component {
             marginBottom: rhythm(1),
           }}
         />
+        <p> 
+          <strong>Tags:{'  '}{post.frontmatter.tags.map((tag, index) => {
+            return (
+              <span 
+                style = {{
+                  margin: '0px 12px 0px 0px',
+                  padding: '4px',
+                  border: '1px solid rebeccapurple'
+                }}
+              key={index} className="tag">
+              <Link to={`/tags/${tag}`}
+                style = {{
+                  color: 'rebeccapurple',
+                  textDecoration: 'none'
+                }}
+                >{tag}</Link>{' '}        
+                </span>
+            )
+          })}
+          </strong>
+      </p>
         
         {/* <Bio /> */}
 
@@ -107,7 +108,7 @@ export const pageQuery = graphql`
       frontmatter {
         tags
         title
-        date(formatString: "YYYY-MM-YYYY")
+        date(formatString: "YYYY-MM-DD")
         description
       }
     }

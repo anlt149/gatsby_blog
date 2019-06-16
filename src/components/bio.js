@@ -22,6 +22,7 @@ function Bio() {
             style={{
               display: `flex`,
               marginBottom: rhythm(2.5),
+              margin: `0 0 2px 0`
             }}
           >
             <Image
@@ -38,8 +39,10 @@ function Bio() {
               }}
             />
             <p>
-              My name is <strong> An </strong>, Senior in University of Information Technology
-             
+              When my mom was in her 30s, she spent years in An Giang (Vietnam) with her Ricoh PnS camera. 
+              I wish I had a story like her. I'm now living
+              in Saigon, the most beautiful city of Vietnam
+              and enjoying taking street and portrait photography. 
             </p>
           </div>
         )
