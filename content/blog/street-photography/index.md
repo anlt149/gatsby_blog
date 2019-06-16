@@ -5,7 +5,7 @@ date: 2019-06-16
 description: "Chia sẻ nhiếp ảnh"
 ---
 
-Khi bước chân ra đường để chụp ảnh đường phố, nhiều người vẫn luôn e ngại hay lo lắng về việc đối tượng sẽ phản ứng tiêu cực lại với mình. Tuy nhiên đó là điều tất yếu khi bạn chụp ảnh đường phố, kể cả những nhiếp ảnh gia nổi tiến, họ cũng cũng gặp phải các tình huống tương tự. 
+Khi bước chân ra đường để chụp ảnh đường phố, nhiều người vẫn luôn e ngại hay lo lắng về việc đối tượng sẽ phản ứng tiêu cực lại với mình. Tuy nhiên đó là điều tất yếu khi bạn chụp ảnh đường phố, kể cả những nhiếp ảnh gia nổi tiếng, họ cũng cũng gặp phải các tình huống tương tự. 
 ![Street 4](./street_4.jpg)
 
 Từ kinh nghiệm bản thân và học hỏi từ các nhiếp ảnh gia đi trước thì mình thấy có 2 cách chính để tiếp cận đối tượng khi chụp ảnh đường phố, đó là:  
