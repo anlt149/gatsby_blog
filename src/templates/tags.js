@@ -1,9 +1,22 @@
 import React from "react"
 import PropTypes from "prop-types"
 
+import styled from "styled-components";
 import { Link, graphql } from 'gatsby'
 
 const Tags = ({pageContext, data}) => {
+    const ListItem = styled.li`
+      list-style-type: none;
+      text-decoration: none;
+    `;
+
+    const StyledLink = styled(Link)`
+    color: 	#000;
+    text-decoration: none;
+    &:hover {
+      color: #9ea3aa;
+    }
+  `;
     const { tag } = pageContext
     const { edges, totalCount } = data.allMarkdownRemark
     const tagHeader = `${totalCount} post${
@@ -18,9 +31,9 @@ const Tags = ({pageContext, data}) => {
                     const { slug } = node.fields
                     const { title } = node.frontmatter
                     return (
-                        <li key={slug}>
-                            <Link to={slug}>{title}</Link>
-                        </li>
+                        <ListItem key={slug}>
+                            <StyledLink to={slug}>{title}</StyledLink>
+                        </ListItem>
                     )
                 })}
             

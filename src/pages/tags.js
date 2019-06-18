@@ -8,6 +8,7 @@ import kebabCase from "lodash/kebabCase"
 import { Helmet } from "react-helmet"
 import { Link, graphql } from "gatsby"
 
+
 const TagsPage = ({
   data: {
     allMarkdownRemark: { group },
@@ -22,7 +23,9 @@ const TagsPage = ({
       <h1>Tags</h1>
       <ul>
         {group.map(tag => (
-          <li key={tag.fieldValue}>
+          <li key={tag.fieldValue}
+            
+          >
             <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
               {tag.fieldValue} ({tag.totalCount})
             </Link>
