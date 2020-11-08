@@ -2,10 +2,15 @@
     text-decoration: none;
     text-transform: uppercase;
     color: cornflowerblue;
+    list-style: none;
 }
 
 .tag:visited {
     text-decoration: none;
+}
+
+.tag-all {
+    float: right;
 }
 
 .tag-date {

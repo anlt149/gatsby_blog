@@ -7,7 +7,9 @@ import kebabCase from "lodash/kebabCase"
 // Components
 import { Helmet } from "react-helmet"
 import { Link, graphql } from "gatsby"
-
+import "../templates/layout.css"
+import "../templates/tags.css"
+import { rhythm } from "../utils/typography"
 
 const TagsPage = ({
   data: {
@@ -17,14 +19,20 @@ const TagsPage = ({
     },
   },
 }) => (
-  <div>
-    <Helmet title={title} />
+  <div
+      style={{
+        marginLeft: `auto`,
+        marginRight: `auto`,
+        maxWidth: rhythm(24),
+        padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
+      }}
+    >
     <div>
-      <h1>Tags</h1>
+      <h1 className="tag-header">Tags</h1>
       <ul>
         {group.map(tag => (
           <li key={tag.fieldValue}>
-            <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
+            <Link to={`/tags/${kebabCase(tag.fieldValue)}/`} className="chip tag">
               {tag.fieldValue} ({tag.totalCount})
             </Link>
           </li>

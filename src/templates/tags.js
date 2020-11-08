@@ -34,7 +34,11 @@ const Tags = ({pageContext, data}) => {
         padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
       }}
     >
-            <h1 className="tag-header">#{tagHeader}</h1>
+            <h1 className="tag-header">#{tagHeader}
+              <span>
+                <Link to="/tags" className="tag tag-all chip">All tags</Link>
+              </span>
+            </h1>
             <ul>
                 {edges.map(( {node} ) => {
                     const { slug } = node.fields
@@ -57,11 +61,6 @@ const Tags = ({pageContext, data}) => {
                     )
                 })}
             </ul>
-                     {/*
-              This links to a page that does not yet exist.
-              We'll come back to it!
-            */}
-            <Link to="/tags">All tags</Link>
         </div>
     )
 }
