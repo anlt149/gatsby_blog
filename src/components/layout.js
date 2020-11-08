@@ -2,6 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 
 import { rhythm, scale } from "../utils/typography"
+import "../templates/layout.css"
 
 class Layout extends React.Component {
   render() {
@@ -63,9 +64,11 @@ class Layout extends React.Component {
         <header>{header}</header>
         <main>{children}</main>
         <footer>
+          Copyright
           © {new Date().getFullYear()},
           {` `}
-          <a href="https://www.instagram.com/matmoong">matmoong</a>
+          <a href="https://www.instagram.com/okayanoi">okayanoi </a>.
+           All rights reserved.
         </footer>
       </div>
     )

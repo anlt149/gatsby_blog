@@ -3,7 +3,10 @@ import PropTypes from "prop-types"
 
 import styled from "styled-components";
 import { Link, graphql } from 'gatsby'
-
+import Img from 'gatsby-image'
+import { rhythm } from "../utils/typography"
+import "../templates/layout.css"
+import "../templates/tags.css"
 const Tags = ({pageContext, data}) => {
     const ListItem = styled.li`
       list-style-type: none;
@@ -17,26 +20,42 @@ const Tags = ({pageContext, data}) => {
       color: #9ea3aa;
     }
   `;
+
     const { tag } = pageContext
-    const { edges, totalCount } = data.allMarkdownRemark
-    const tagHeader = `${totalCount} post${
-        totalCount === 1 ? "" : "s"
-    } tagged with "${tag}"`
+    const { edges} = data.allMarkdownRemark
+    const tagHeader = `${tag}`
 
     return (
-        <div>
-            <h1>{tagHeader}</h1>
+      <div
+      style={{
+        marginLeft: `auto`,
+        marginRight: `auto`,
+        maxWidth: rhythm(24),
+        padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
+      }}
+    >
+            <h1 className="tag-header">#{tagHeader}</h1>
             <ul>
                 {edges.map(( {node} ) => {
                     const { slug } = node.fields
-                    const { title } = node.frontmatter
+                    const { title} = node.frontmatter
+                    const { date } = node.frontmatter
                     return (
                         <ListItem key={slug}>
-                            <StyledLink to={slug}>{title}</StyledLink>
+                          <div>
+                            <p className="tag-date">{date}  <span>
+                            <Link to={`/tags/${tag}`} className = "tag">#{tag}</Link>{' '}
+                            </span></p>
+                          </div>
+                            <StyledLink className="post-title" style={{ boxShadow: `none` }} to={slug}>{title}
+                          </StyledLink>
+                            <Img fluid={node.frontmatter.featuredImage.childImageSharp.fluid}/>
+                          <p dangerouslySetInnerHTML={{__html:  node.excerpt }}/>
+                          <hr />
                         </ListItem>
+                        
                     )
                 })}
-            
             </ul>
                      {/*
               This links to a page that does not yet exist.
@@ -87,8 +106,17 @@ Tags.propTypes = {
               slug
             }
             frontmatter {
+              date(formatString: "MMM YYYY")
               title
+              featuredImage {
+                childImageSharp {
+                  fluid(maxWidth: 630, quality: 100) {
+                    ...GatsbyImageSharpFluid
+                  }
+                }
+              }
             }
+            excerpt
           }
         }
       }

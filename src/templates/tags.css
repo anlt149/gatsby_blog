@@ -1,0 +1,30 @@
+.tag {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: cornflowerblue;
+}
+
+.tag:visited {
+    text-decoration: none;
+}
+
+.tag-date {
+    text-transform: uppercase;
+    font-size: .78125rem;
+}
+
+.chip:hover {
+    background-color: #0d5789;
+}
+
+.chip {
+    background-color: #73737a;
+    border-radius: 2px 2px 2px 2px;
+    color: #fff;
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 7px;
+    position: relative;
+    text-transform: uppercase;
+}

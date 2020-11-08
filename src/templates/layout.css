@@ -1,0 +1,35 @@
+.post-title {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.5293rem;
+    line-height: 2.4375rem;
+    padding-top: 0px;
+}
+
+.post-featured-img {
+    margin-bottom: 10px;
+}
+
+.post-info {
+    margin-bottom: 0;
+}
+
+.nav-btn {
+    background-color: #73737a;
+    color: #fff;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 3px 7px;
+    position: relative;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.nav-btn:hover {
+    background-color: #0d5789;
+}
+
+.nav-btn:visited {
+    text-decoration: none;
+}

@@ -4,7 +4,6 @@ import { Link, graphql } from "gatsby"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { rhythm } from "../utils/typography"
 import Img from 'gatsby-image'
 import styled from "styled-components";
 
@@ -29,24 +28,31 @@ class BlogIndex extends React.Component {
           const title = node.frontmatter.title || node.fields.slug
           return (
             <div key={node.fields.slug}>
-              <h3
-                style={{
-                  marginBottom: rhythm(1 / 4),
-                  textAlign: `center`,
-                  lineHeight: `40px`
-                }}
-              >
+              <div className="post-info">
+                <p className="tag-date">{node.frontmatter.date} <span>
+                  {node.frontmatter.tags.map((tag, index) => {
+                    return (
+                      <span key={index} className="tag">
+                        <Link to={`/tags/${tag}`} className = "chip tag">
+                          {tag}
+                        </Link> {' '}
+                      </span>
+                    )
+                    })}</span>
+                </p>
+              </div>
+              <div className="post-title">
                 <StyledLink style={{ boxShadow: `none` }} to={node.fields.slug}>
                   {title}
-                   <Img sizes={node.frontmatter.featuredImage.childImageSharp.sizes}/>
                 </StyledLink>
-              </h3>
-              <small>{node.frontmatter.date}</small>
+              </div>
+                
               <p
                 dangerouslySetInnerHTML={{
                   __html: node.frontmatter.description || node.excerpt,
                 }}
               />
+              <Img className="post-featured-img" fluid={node.frontmatter.featuredImage.childImageSharp.fluid}/>
               <hr />
             </div>
           )
@@ -73,16 +79,17 @@ export const pageQuery = graphql`
             slug
           }
           frontmatter {
-            date(formatString: "YYYY-MM-DD")
+            date(formatString: "MMMM YYYY")
             title
             featuredImage {
               childImageSharp {
-                sizes(maxWidth: 630) {
-                  ...GatsbyImageSharpSizes
+                fluid(maxWidth: 630, quality: 100) {
+                  ...GatsbyImageSharpFluid
                 }
               }
             }
             description
+            tags
           }
         }
       }
