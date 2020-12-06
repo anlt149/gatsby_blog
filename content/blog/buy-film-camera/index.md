@@ -2,7 +2,7 @@
 title: "Mẹo kiểm tra khi mua máy phim"
 tags: ['photography','tips','share']
 date: 2019-08-22
-# description: "Chia sẻ nhiếp ảnh"
+description: "Chia sẻ nhiếp ảnh"
 featuredImage: "./p5.jpg"
 ---
 
